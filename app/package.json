@@ -1,15 +1,22 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "electron-react-boilerplate",
-  "version": "1.0.0",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "xian-d",
+  "productName": "Xian",
+  "version": "0.10.0",
+  "description": "Xian desktop application based on the awesome electron-react-boilerplate by C. T. Lin. Electron, React, React Router and Webpack",
   "main": "./main.js",
-  "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
   },
-  "license": "MIT",
+  "author": {
+    "name": "Jakub Chronowski",
+    "email": "jakub@chronow.ski",
+    "url": "https://chronow.ski"
+  },
+  "license": "See LICENSE",
+  "bugs": {
+    "url": "https://github.com/Kuba77/Xian-D/issues"
+  },
   "dependencies": {
   }
 }

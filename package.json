@@ -153,6 +153,7 @@
   "dependencies": {
     "@blueprintjs/core": "^1.1.0",
     "electron-debug": "^1.0.1",
+    "electron-machine-id": "^1.0.9",
     "npm": "^4.0.2",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
