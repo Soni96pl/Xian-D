@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import { persistStore, autoRehydrate } from 'redux-persist'
 import thunk from 'redux-thunk';
 import { hashHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
@@ -26,11 +27,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
   compose;
 /* eslint-enable no-underscore-dangle */
 const enhancer = composeEnhancers(
-  applyMiddleware(thunk, router, logger)
+  applyMiddleware(thunk, router, logger), autoRehydrate()
 );
 
 export default function configureStore(initialState: Object) {
   const store = createStore(rootReducer, initialState, enhancer);
+  persistStore(store);
 
   if (module.hot) {
     module.hot.accept('../reducers', () =>
