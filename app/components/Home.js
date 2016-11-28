@@ -1,15 +1,14 @@
 // @flow
 import React, { Component } from 'react';
-import styles from './Home.css';
+import Sidebar from './Sidebar';
 
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <div className={styles.container}>
-          <h2>Xian</h2>
-        </div>
+        <Sidebar />
+        <main></main>
       </div>
     );
   }

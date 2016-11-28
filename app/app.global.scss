@@ -1,5 +1,55 @@
+@import "~@blueprintjs/core/dist/blueprint.css";
+@import "~@blueprintjs/core/src/common/_variables.scss";
+@import "~font-awesome/css/font-awesome.css";
+
 body {
-  margin: 0
+  margin: 0;
+
+	main {
+		height: 100vh;
+
+		margin-left: 200px;
+		padding: 1em;
+	}
+
+	.sidebar {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+
+		width: 200px;
+	  height: 100vh;
+
+		color: $gray5;
+
+		&.pt-menu, .pt-menu {
+		  border-radius: 0px;
+
+		  background-color: #2F3241;
+
+			.pt-menu-header > h6 {
+				color: $gray3;
+			}
+		}
+
+		.pt-bottom {
+			position: absolute;
+			right: 5px;
+			bottom: 5px;
+			left: 5px;
+		}
+	}
 }
 
-@import "~@blueprintjs/core/dist/blueprint.css"
+
+h1 {
+	margin-bottom: 0.66em;
+
+	font-size: 3em;
+	font-weight: 500;
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: 300;
+}
