@@ -1,5 +1,6 @@
 // @flow
 import React, { Component, PropTypes } from 'react';
+import Sidebar from '../components/Sidebar';
 
 export default class App extends Component {
   static propTypes = {
@@ -9,7 +10,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        <Sidebar />
+        <main>{this.props.children}</main>
       </div>
     );
   }
