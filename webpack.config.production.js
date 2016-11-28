@@ -34,13 +34,13 @@ const config = validate(merge(baseConfig, {
           'sass-loader'
         )
       },
-      // Pipe other styles through scss modules and append to style.css
+      // Pipe other styles through sass modules and append to style.css
       {
-        test: /^((?!\.global).)*\.css$/,
+        test: /^((?!\.global).)*\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
           'css-loader',
-          'scss-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+          'sass-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
         )
       },
       // Pipe other styles through css modules and append to style.css
