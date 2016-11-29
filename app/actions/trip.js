@@ -1,7 +1,7 @@
 // @flow
 export const ADD_TRIP = 'ADD_TRIP';
 
-export function add(name: String) {
+export function addTrip(name: string) {
   return {
     type: ADD_TRIP,
     name

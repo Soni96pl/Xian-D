@@ -4,14 +4,15 @@ import Sidebar from '../components/Sidebar';
 
 export default class App extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
   };
 
   render() {
+    const { children } = this.props;
     return (
       <div>
         <Sidebar />
-        <main>{this.props.children}</main>
+        <main>{children}</main>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import { ADD_TRIP } from '../actions/trip';
 
 let tripId = 0;
 
-export default function trip(state: {}, action: Object) {
+export function trip(state: Object = {}, action: Object) {
   switch (action.type) {
     case ADD_TRIP:
       tripId += 1;
@@ -12,6 +12,18 @@ export default function trip(state: {}, action: Object) {
         id: tripId,
         name: action.name
       };
+    default:
+      return state;
+  }
+}
+
+export default function trips(state: Array<Object> = [], action: Object) {
+  switch (action.type) {
+    case ADD_TRIP:
+      return [
+        ...state,
+        trip(undefined, action)
+      ];
     default:
       return state;
   }

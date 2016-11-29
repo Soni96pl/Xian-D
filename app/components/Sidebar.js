@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
+import TripMenu from '../containers/TripMenu';
+
 
 export default class Sidebar extends Component {
   render() {
@@ -9,9 +11,8 @@ export default class Sidebar extends Component {
           <MenuDivider title="Places" />
           <MenuItem iconName="geosearch" text="Search" label="⌘S" />
           <MenuItem iconName="globe" text="View" label="⌘M" />
-          <MenuDivider title="Trips" />
-          <MenuItem iconName="add" text="New trip" label="⌘N" />
         </Menu>
+        <TripMenu />
         <Menu className="sidebar-bottom">
           <MenuDivider />
           <MenuItem iconName="cog" text="Settings" />
