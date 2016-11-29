@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, autoRehydrate } from 'redux-persist'
+import { persistStore, autoRehydrate } from 'redux-persist';
 import thunk from 'redux-thunk';
 import { hashHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
