@@ -1,5 +1,5 @@
 // @flow
-import { ADD_TRIP } from '../actions/trip';
+import { ADD_TRIP } from '../actions/trips';
 
 let tripId = 0;
 
