@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
 import TripMenuItem from './TripMenuItem';
-import TestTripItem from '../containers/TestTripItem';
 
 export default class TripMenu extends Component {
   static propTypes = {
