@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TripMenu from '../components/TripMenu';
+import TripMenu from '../../components/Sidebar/TripMenu';
 
 function mapStateToProps(state) {
   return {

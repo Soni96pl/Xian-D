@@ -1,0 +1,30 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 200px;
+  height: 100vh;
+
+  background-color: #2F3241;
+  color: #F5F8FA;
+}
+
+.sidebarMenu {
+  border-radius: 0px !important;
+
+  background-color: transparent !important;
+}
+
+.sidebarMenuDivider {
+  color: #E1E8ED !important;
+
+  font-weight: 300 !important;
+}
+
+.sidebarBottom {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+}

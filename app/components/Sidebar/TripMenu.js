@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import { Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
+import { MenuDivider, MenuItem } from '@blueprintjs/core';
+import SidebarMenu from './SidebarMenu';
 import TripMenuItem from './TripMenuItem';
 
 export default class TripMenu extends Component {
@@ -10,16 +11,29 @@ export default class TripMenu extends Component {
     }).isRequired).isRequired
   };
 
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
+
+  handleClick() {
+    this.context.router.push('/trips/new');
+  }
+
   render() {
     const { trips } = this.props;
     return (
-      <Menu>
+      <SidebarMenu>
         <MenuDivider title="Trips" />
         {trips.map(trip =>
           <TripMenuItem id={trip.id} name={trip.name} />
         )}
-        <MenuItem iconName="add" text="New trip" label="⌘N" />
-      </Menu>
+        <MenuItem
+          iconName="add"
+          text="New trip"
+          label="⌘N"
+          onClick={() => this.handleClick()}
+        />
+      </SidebarMenu>
     );
   }
 }
