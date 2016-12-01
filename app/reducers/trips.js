@@ -1,15 +1,11 @@
 // @flow
 import { ADD_TRIP } from '../actions/trips';
 
-let tripId = 0;
-
 export function trip(state: Object = {}, action: Object) {
   switch (action.type) {
     case ADD_TRIP:
-      tripId += 1;
-
       return {
-        id: tripId,
+        id: action.id,
         name: action.name
       };
     default:

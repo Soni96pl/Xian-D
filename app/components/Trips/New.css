@@ -1,0 +1,17 @@
+.newTripWrapper {
+  text-align: center;
+}
+
+.newTripHeader {
+  margin-top: 2em;
+}
+
+.newTripForm {
+  display: inline-block;
+
+  text-align: center;
+}
+
+.newTripName {
+  margin-top: 1em;
+}
