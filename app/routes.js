@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './containers/App';
 import HomePage from './containers/HomePage';
-import TripsPage from './containers/Trips/Page';
+import TripsPage from './containers/Trips/TripsPage';
 import TripsNewPage from './containers/Trips/NewPage';
 import TripsShowPage from './containers/Trips/ShowPage';
 
