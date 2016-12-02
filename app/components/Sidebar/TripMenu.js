@@ -1,14 +1,12 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import { MenuDivider, MenuItem } from '@blueprintjs/core';
 import SidebarMenu from './SidebarMenu';
 import TripMenuItem from './TripMenuItem';
+import { tripsShape } from '../../shapes/trips';
 
 export default class TripMenu extends Component {
   static propTypes = {
-    trips: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired
-    }).isRequired).isRequired
+    trips: tripsShape.isRequired
   };
 
   static contextTypes = {

@@ -1,16 +1,22 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { MenuItem } from '@blueprintjs/core';
+import { tripShape } from '../../shapes/trips';
 
 export default class TripMenuItem extends Component {
-  static propTypes = {
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired
+  static propTypes = tripShape.isRequired;
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
   };
+
+  handleClick() {
+    this.context.router.push(`/trips/${this.props.id}`);
+  }
 
   render() {
     const { id, name } = this.props;
     return (
-      <MenuItem key={id} iconName="airplane" text={name} label="⌘1" />
+      <MenuItem key={id} iconName="airplane" text={name} label={`⌘${id}`} onClick={() => this.handleClick()} />
     );
   }
 }
