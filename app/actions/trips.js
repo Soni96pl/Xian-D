@@ -1,10 +1,14 @@
 // @flow
+import Barn from 'barn';
+
 export const ADD_TRIP = 'ADD_TRIP';
 
-let tripId = 0;
+const barn = new Barn(localStorage);
+if (barn.get('tripId') == null) barn.set('tripId', 0);
 
 export function addTrip(name: string) {
-  tripId += 1;
+  const tripId = barn.get('tripId') + 1;
+  barn.set('tripId', tripId);
   return {
     type: ADD_TRIP,
     id: tripId,
