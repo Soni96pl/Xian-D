@@ -1,0 +1,17 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 200px;
+  height: 100vh;
+
+  background-color: $macOS-sidebar-color;
+}
+
+.sidebar-bottom {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+}

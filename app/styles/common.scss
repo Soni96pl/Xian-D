@@ -1,0 +1,16 @@
+@import "variables";
+
+body {
+  margin: 0;
+
+	background-color: $macOS-background-color;
+
+	font-size: 13px;
+
+	main {
+		height: 100vh;
+
+		margin-left: 200px;
+		padding: 1em;
+	}
+}

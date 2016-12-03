@@ -1,38 +1,5 @@
-@import "~@blueprintjs/core/dist/blueprint.css";
-@import "~@blueprintjs/core/src/common/_variables.scss";
+@import "styles/blueprint/blueprint";
 
-body {
-  margin: 0;
-
-	main {
-		height: 100vh;
-
-		margin-left: 200px;
-		padding: 1em;
-	}
-}
-
-.pt-menu {
-  border-radius: 0px;
-
-  background-color: transparent;
-
-	.pt-menu-header > h6 {
-		color: $gray3;
-
-		font-weight: 300;
-	}
-}
-
-
-h1 {
-	margin-bottom: 0.66em;
-
-	font-size: 3em;
-	font-weight: 500;
-}
-
-h2 {
-	font-size: 2em;
-	font-weight: 300;
-}
+@import "styles/common";
+@import "styles/typography";
+@import "styles/components/index";

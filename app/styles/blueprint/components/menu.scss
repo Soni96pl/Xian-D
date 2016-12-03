@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.pt-menu {
+  border-radius: 0px;
+
+  background-color: transparent;
+
+	.pt-menu-header {
+		&> h6 {
+			color: $macOS-menu-header-color;
+
+			font-weight: 300;
+		}
+	}
+}
