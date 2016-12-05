@@ -1,10 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { tripsShape } from '../../shapes/trips';
 import Status from '../../components/Status';
 
-
-class ShowPage extends Component {
+export default class Show extends Component {
   static propTypes = {
     params: PropTypes.shape({
       tripId: PropTypes.string
@@ -29,12 +27,3 @@ class ShowPage extends Component {
     );
   }
 }
-
-
-function mapStateToProps(state) {
-  return {
-    trips: state.trips
-  };
-}
-
-export default connect(mapStateToProps, undefined)(ShowPage);
