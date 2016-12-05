@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { MenuDivider, MenuItem } from '@blueprintjs/core';
-import SidebarMenu from './SidebarMenu';
+import { Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
 import TripMenuItem from './TripMenuItem';
+import TripsNewDialog from '../../containers/Trips/NewDialog';
 import { tripsShape } from '../../shapes/trips';
 
 export default class TripMenu extends Component {
@@ -13,25 +13,32 @@ export default class TripMenu extends Component {
     router: React.PropTypes.object.isRequired
   };
 
-  handleClick() {
-    this.context.router.push('/trips/new');
+  state = { isDialogOpen: false }
+
+  toggleDialog() {
+    this.setState({ isDialogOpen: !this.state.isDialogOpen });
   }
 
   render() {
     const { trips } = this.props;
     return (
-      <SidebarMenu>
-        <MenuDivider title="Trips" />
-        {trips.map(trip =>
-          <TripMenuItem id={trip.id} name={trip.name} />
-        )}
-        <MenuItem
-          iconName="add"
-          text="New trip"
-          label="⌘N"
-          onClick={() => this.handleClick()}
-        />
-      </SidebarMenu>
+      <div>
+        <Menu>
+          <MenuDivider title="Trips" />
+          {trips.map(trip =>
+            <TripMenuItem id={trip.id} name={trip.name} />
+          )}
+          <TripsNewDialog
+            opener={
+              <MenuItem
+                iconName="add"
+                text="New trip"
+                label="⌘N"
+              />
+            }
+          />
+        </Menu>
+      </div>
     );
   }
 }
