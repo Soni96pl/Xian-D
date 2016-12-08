@@ -4,9 +4,9 @@ import { Dialog as BlueprintDialog } from '@blueprintjs/core';
 export default class Dialog extends Component {
   static propTypes = {
     opener: PropTypes.element.isRequired,
-    children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
+    children: PropTypes.element.isRequired,
     isOpen: PropTypes.bool,
-    onInteraction: PropTypes.function
+    onInteraction: PropTypes.func
   }
 
   state = {
