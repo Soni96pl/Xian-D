@@ -16,7 +16,13 @@ export default class TripMenuItem extends Component {
   render() {
     const { id, name } = this.props;
     return (
-      <MenuItem key={id} iconName="airplane" text={name} label={`⌘${id}`} onClick={() => this.handleClick()} />
+      <MenuItem
+        key={id}
+        iconName="folder-close"
+        text={name}
+        label={`⌘${id}`}
+        onClick={() => this.handleClick()}
+      />
     );
   }
 }
