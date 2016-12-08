@@ -4,7 +4,7 @@ import Status from '../../components/Status';
 
 export default class View extends Component {
   static propTypes = {
-    trip: tripShape.isRequired
+    trip: tripShape
   }
 
   render() {
