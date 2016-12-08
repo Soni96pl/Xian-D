@@ -26,7 +26,7 @@ export default class TripMenu extends Component {
         <Menu>
           <MenuDivider title="Trips" />
           {trips.map(trip =>
-            <TripMenuItem id={trip.id} name={trip.name} />
+            <TripMenuItem key={`trip-${trip.id}`} id={trip.id} name={trip.name} />
           )}
           <TripsNewDialog
             opener={

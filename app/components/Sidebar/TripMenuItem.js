@@ -17,7 +17,6 @@ export default class TripMenuItem extends Component {
     const { id, name } = this.props;
     return (
       <MenuItem
-        key={id}
         iconName="folder-close"
         text={name}
         label={`⌘${id}`}
