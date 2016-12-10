@@ -3,7 +3,8 @@ import TripMenu from '../../components/Sidebar/TripMenu';
 
 function mapStateToProps(state) {
   return {
-    trips: state.trips
+    trips: state.trips.trips,
+    tripsById: state.trips.tripsById
   };
 }
 

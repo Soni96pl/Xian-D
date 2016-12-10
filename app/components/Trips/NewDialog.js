@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { Intent, Button } from '@blueprintjs/core';
 import Dialog from '../Dialog';
 
 export default class NewDialog extends Component {
@@ -30,8 +29,8 @@ export default class NewDialog extends Component {
     const { router } = this.context;
     event.preventDefault();
 
-    const trip = addTrip(this.state.tripName);
-    router.push(`/trips/${trip.id}`);
+    const trip = addTrip({ name: this.state.tripName });
+    router.push(`/trips/${trip.payload.result}`);
     this.toggleDialog();
   }
 

@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import { hashHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
 import createLogger from 'redux-logger';
+import normalizrMiddleware from 'redux-normalizr-middleware';
 import rootReducer from '../reducers';
 
 const actionCreators = {
@@ -17,6 +18,8 @@ const logger = createLogger({
 
 const router = routerMiddleware(hashHistory);
 
+const normalizr = normalizrMiddleware();
+
 // If Redux DevTools Extension is installed use it, otherwise use Redux compose
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -27,7 +30,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
   compose;
 /* eslint-enable no-underscore-dangle */
 const enhancer = composeEnhancers(
-  applyMiddleware(thunk, router, logger), autoRehydrate()
+  applyMiddleware(thunk, router, normalizr, logger), autoRehydrate()
 );
 
 export default function configureStore(initialState: Object) {
