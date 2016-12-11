@@ -2,16 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import { Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
 import TripMenuItem from './TripMenuItem';
 import TripsNewDialog from '../../containers/Trips/NewDialog';
-import { tripsByIdShape } from '../../shapes/trips';
+import { tripsShape } from '../../shapes/trips';
 
 export default class TripMenu extends Component {
   static propTypes = {
-    trips: PropTypes.arrayOf(PropTypes.number),
-    tripsById: tripsByIdShape.isRequired
+    trips: tripsShape.isRequired
   };
 
   static contextTypes = {
-    router: React.PropTypes.object.isRequired
+    router: PropTypes.object.isRequired
   };
 
   state = { isDialogOpen: false }
@@ -21,13 +20,17 @@ export default class TripMenu extends Component {
   }
 
   render() {
-    const { trips, tripsById } = this.props;
+    const { trips } = this.props;
     return (
       <div>
         <Menu>
           <MenuDivider title="Trips" />
-          {trips.map(id =>
-            <TripMenuItem key={`trip-${id}`} id={id} name={tripsById[id].name} />
+          {Object.keys(trips).map(id =>
+            <TripMenuItem
+              key={`trip-${id}`}
+              id={id}
+              name={trips[id].name}
+            />
           )}
           <TripsNewDialog
             opener={
