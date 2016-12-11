@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import TripMenu from '../../components/Sidebar/TripMenu';
 
 function mapStateToProps(state) {
+  /* Pass routing state to update on route change */
   return {
-    trips: state.trips.trips,
-    tripsById: state.trips.tripsById
+    routing: state.routing,
+    trips: state.trips.trips
   };
 }
 
