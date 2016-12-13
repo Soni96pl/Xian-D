@@ -21,7 +21,7 @@ export default class TripMenuItem extends Component {
     return (
       <MenuItem
         iconName="folder-close"
-        className={router.isActive(`trips/${id}`) ? 'active' : ''}
+        className={router.isActive(`trips/${id}`) && 'active'}
         text={name}
         label={`⌘${id}`}
         onClick={() => this.handleClick()}
