@@ -30,4 +30,8 @@ body {
 	h6 {
 		font-weight: 500;
 	}
+
+	a:hover, button:hover {
+		cursor: default;
+	}
 }
