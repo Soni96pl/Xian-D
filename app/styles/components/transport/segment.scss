@@ -1,25 +1,22 @@
-.segment-small {
-	display: flex;
-	flex-flow: row;
-	align-items: center;
+.segments {
+	.segment-small {
+		margin: 0;
+		border-radius: 0;
 
-	margin: 1em 0;
+		&:first-child {
+			border-radius: 4px 4px 0 0;
+		}
 
-	&> div {
-		padding: 0 1em;
-	}
+		&:last-child {
+			border-radius: 0 0 4px 4px;
+		}
 
-	&> .segment-date {
-		width: 30%;
-	}
-	&> .segment-places {
-		width: 40%;
-	}
-	&> .segment-mode {
-		width: 15%;
-	}
-	&> .segment-controls {
-		width: 15%;
-		text-align: right;
+		&> div {
+			padding: 0 1em;
+		}
+
+		&> .segment-date {
+			text-weight: bold;
+		}
 	}
 }
