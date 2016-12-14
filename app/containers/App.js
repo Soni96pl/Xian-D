@@ -12,7 +12,7 @@ export default class App extends Component {
     return (
       <div>
         <Sidebar />
-        <main>{children}</main>
+        {children}
       </div>
     );
   }
