@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class Transport extends Component {
+export default class TransportMenu extends Component {
   static propTypes = {
     children: PropTypes.arrayOf(PropTypes.element)
   }

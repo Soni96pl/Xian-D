@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { MenuItem } from '@blueprintjs/core';
+import { Menu, MenuItem } from '@blueprintjs/core';
 import { tripShape } from '../../shapes/trips';
 
 export default class TripMenuItem extends Component {
@@ -9,23 +9,31 @@ export default class TripMenuItem extends Component {
     router: PropTypes.object.isRequired
   };
 
-  handleClick() {
-    const { router } = this.context;
-    const { id } = this.props;
-    router.push(`/trips/${id}`);
-  }
-
   render() {
     const { id, name } = this.props;
     const { router } = this.context;
+    const isActive = router.isActive(`trips/${id}/overview`) || router.isActive(`trips/${id}/transport`);
     return (
-      <MenuItem
-        iconName="folder-close"
-        className={router.isActive(`trips/${id}`) && 'active'}
-        text={name}
-        label={`⌘${id}`}
-        onClick={() => this.handleClick()}
-      />
+      <div>
+        <MenuItem
+          className={isActive && 'active'}
+          text={name}
+          label={`⌘${id}`}
+          onClick={() => router.push(`/trips/${id}/overview`)}
+        />
+        {isActive &&
+          <Menu>
+            <MenuItem
+              text="Transport"
+              onClick={() => router.push(`/trips/${id}/transport`)}
+            />
+            <MenuItem
+              text="Lodging"
+              onClick={() => router.push(`/trips/${id}/lodging`)}
+            />
+          </Menu>
+        }
+      </div>
     );
   }
 }
