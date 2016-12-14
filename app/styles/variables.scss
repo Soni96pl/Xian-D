@@ -1,10 +1,14 @@
-$macOS-gray1: #C7C7C7;
-$macOS-gray2: #818181;
-$macOS-gray3: #F6F6F6;
-$macOS-gray4: #FFFFFF;
+$macOS-gray1: #818181;
+$macOS-gray2: #5C7080;
+$macOS-gray3: #C7C7C7;
+$macOS-gray4: #E5E5E5;
+$macOS-gray5: #F6F6F6;
+$macOS-gray6: #FFFFFF;
 
-$macOS-border-color: $macOS-gray1;
-$macOS-menu-header-color: $macOS-gray2;
-$macOS-sidebar-color: $macOS-gray3;
-$macOS-status-color: $macOS-gray3;
-$macOS-background-color: $macOS-gray4;
+$macOS-border-color: $macOS-gray3;
+$macOS-menu-header-color: $macOS-gray1;
+$macOS-sidebar-color: $macOS-gray5;
+$macOS-sidebar-active-color: $macOS-gray4;
+$macOS-label-color: $macOS-gray2;
+$macOS-status-color: $macOS-gray5;
+$macOS-background-color: $macOS-gray6;
