@@ -9,13 +9,13 @@ export default class Sidebar extends Component {
       <div className="sidebar">
         <Menu>
           <MenuDivider title="Places" />
-          <MenuItem iconName="geosearch" text="Search" label="⌘S" />
-          <MenuItem iconName="globe" text="View" label="⌘M" />
+          <MenuItem text="Search" label="⌘S" />
+          <MenuItem text="View" label="⌘M" />
         </Menu>
         <TripMenu />
         <Menu className="sidebar-bottom">
           <MenuDivider />
-          <MenuItem iconName="cog" text="Settings" />
+          <MenuItem text="Settings" />
         </Menu>
       </div>
     );
