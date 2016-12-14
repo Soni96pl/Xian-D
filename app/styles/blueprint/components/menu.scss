@@ -9,28 +9,25 @@
 		&> h6 {
 			color: $macOS-menu-header-color;
 
+			font-size: 12px;
 			font-weight: 300;
+			text-transform: uppercase;
 		}
 	}
 
 	li {
 		&> .pt-menu-item {
-			margin: 0 -5px;
-			padding: 7px 12px;
-
 			&:hover {
-				background-color: transparent;
-				color: inherit;
-
-				cursor: initial;
-
-				&::before, .pt-menu-item-label {
-					color: #5c7080;
-				}
+				cursor: default;
 			}
 
-			&.active {
-				background-color: #E5E5E5;
+			&.active:not(:hover), &:focus:not(:hover) {
+				background-color: $macOS-sidebar-active-color;
+				color: inherit;
+
+				&::before, .pt-menu-item-label {
+					color: $macOS-label-color;
+				}
 			}
 		}
 	}
