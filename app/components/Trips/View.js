@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Tabs, TabList, Tab, TabPanel } from '@blueprintjs/core';
 import { tripShape } from '../../shapes/trips';
+import { transportShape } from '../../shapes/transport';
 import Status from '../Status';
 import QuickAdd from '../../containers/Transport/QuickAdd';
+import Transport from '../Transport/Transport';
+import Segment from '../Transport/Segment';
 
 export default class View extends Component {
   static propTypes = {
-    trip: tripShape
+    trip: tripShape,
+    transport: transportShape
   }
 
   state = {
@@ -17,11 +22,32 @@ export default class View extends Component {
   }
 
   render() {
-    const { trip } = this.props;
+    const { trip, transport } = this.props;
     return (
-      <div>
+      <div key={`trip-view-${trip.id}`}>
         <Status title={trip.name} />
-        <QuickAdd tripId={trip.id} />
+        <Tabs>
+          <TabList>
+            <Tab>Overview</Tab>
+            <Tab isDisabled={trip.transport.length === 0}>Transport</Tab>
+          </TabList>
+          <TabPanel>
+            <main>
+              <QuickAdd tripId={trip.id} />
+            </main>
+          </TabPanel>
+          <TabPanel>
+            <Transport>
+              {trip.transport.map(id =>
+                <Segment
+                  origin={transport[id].departure.station}
+                  destination={transport[id].arrival.station}
+                  departure={transport[id].departure.time}
+                />
+              )}
+            </Transport>
+          </TabPanel>
+        </Tabs>
       </div>
     );
   }
