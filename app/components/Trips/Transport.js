@@ -15,7 +15,7 @@ export default class Transport extends Component {
     return (
       <div key={`trip-${trip.id}-transport`}>
         <Status title={trip.name} />
-        <TransportMenu transport={trip.transport.map(id => transport[id])} />
+        <TransportMenu tripId={trip.id} transport={trip.transport.map(id => transport[id])} />
       </div>
     );
   }
