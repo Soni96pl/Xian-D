@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { tripShape } from '../../shapes/trips';
 import { transportShape } from '../../shapes/transport';
 import Status from '../Status';
-import TransportMenu from '../Transport/TransportMenu';
+import TransportMenu from './TransportMenu';
 
 export default class Transport extends Component {
   static propTypes = {

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { tripsShape } from '../../shapes/trips';
 import { transportShape } from '../../shapes/transport';
-import Transport from '../../components/Trips/Transport';
+import Transport from '../../components/Transport/TransportPage';
 
 class TransportPage extends Component {
   static propTypes = {
