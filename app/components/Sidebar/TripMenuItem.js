@@ -12,19 +12,18 @@ export default class TripMenuItem extends Component {
   render() {
     const { id, name } = this.props;
     const { router } = this.context;
-    const isActive = RegExp(`^/trips/${id}`).test(router.location.pathname);
     return (
       <div>
         <MenuItem
-          className={router.isActive(`trips/${id}/overview`) && 'active'}
+          className={router.isActive(`trips/${id}`, true) && 'active'}
           text={name}
           label={`⌘${id}`}
-          onClick={() => router.push(`/trips/${id}/overview`)}
+          onClick={() => router.push(`/trips/${id}`)}
         />
-        {isActive &&
+        {router.isActive(`trips/${id}`) &&
           <Menu>
             <MenuItem
-              className={RegExp(`^/trips/${id}/transport`).test(router.location.pathname) && 'active'}
+              className={router.isActive(`trips/${id}/transport`) && 'active'}
               text="Transport"
               onClick={() => router.push(`/trips/${id}/transport`)}
             />
