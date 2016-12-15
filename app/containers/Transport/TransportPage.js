@@ -6,6 +6,7 @@ import Transport from '../../components/Transport/TransportPage';
 
 class TransportPage extends Component {
   static propTypes = {
+    children: PropTypes.element,
     params: PropTypes.shape({
       tripId: PropTypes.string
     }).isRequired,
@@ -15,9 +16,13 @@ class TransportPage extends Component {
 
   render() {
     const { tripId } = this.props.params;
-    const { trips, transport } = this.props;
+    const { children, trips, transport } = this.props;
     const trip = trips[parseInt(tripId, 10)];
-    return <Transport trip={trip} transport={transport} />;
+    return (
+      <Transport trip={trip} transport={transport}>
+        {children}
+      </Transport>
+    );
   }
 }
 

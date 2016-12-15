@@ -6,6 +6,7 @@ import HomePage from './containers/HomePage';
 import TripsPage from './containers/Trips/TripsPage';
 import TripsViewPage from './containers/Trips/ViewPage';
 import TransportPage from './containers/Transport/TransportPage';
+import TransportViewPage from './containers/Transport/ViewPage';
 
 
 export default (
@@ -14,7 +15,9 @@ export default (
     <Route path="trips" component={TripsPage}>
       <Route path=":tripId">
         <IndexRoute component={TripsViewPage} />
-        <Route path="transport" component={TransportPage} />
+        <Route path="transport" component={TransportPage}>
+          <Route path=":segmentId" components={TransportViewPage} />
+        </Route>
       </Route>
     </Route>
   </Route>

@@ -19,10 +19,13 @@ export default class Segment extends Component {
   }
 
   render() {
-    const { segment } = this.props;
+    const { tripId, segment } = this.props;
+    const { router } = this.context;
+    const isActive = router.isActive(`trips/${tripId}/transport/${segment.id}`);
+
     return (
       <div
-        className="transport-menu-segment"
+        className={`transport-menu-segment ${isActive && 'active'}`}
         onClick={() => this.handleClick()}
       >
         <div className="segment-data">
