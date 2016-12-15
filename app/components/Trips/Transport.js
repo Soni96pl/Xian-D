@@ -3,7 +3,6 @@ import { tripShape } from '../../shapes/trips';
 import { transportShape } from '../../shapes/transport';
 import Status from '../Status';
 import TransportMenu from '../Transport/TransportMenu';
-import Segment from '../Transport/Segment';
 
 export default class Transport extends Component {
   static propTypes = {
@@ -16,15 +15,7 @@ export default class Transport extends Component {
     return (
       <div key={`trip-${trip.id}-transport`}>
         <Status title={trip.name} />
-        <TransportMenu>
-          {trip.transport.map(id =>
-            <Segment
-              origin={transport[id].departure.station}
-              destination={transport[id].arrival.station}
-              departure={transport[id].departure.time}
-            />
-          )}
-        </TransportMenu>
+        <TransportMenu transport={trip.transport.map(id => transport[id])} />
       </div>
     );
   }

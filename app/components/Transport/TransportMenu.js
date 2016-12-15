@@ -1,15 +1,19 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { transportShape } from '../../shapes/transport';
+import TransportMenuSegment from './TransportMenuSegment';
 
 export default class TransportMenu extends Component {
   static propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element)
+    transport: transportShape
   }
 
   render() {
-    const { children } = this.props;
+    const { transport } = this.props;
     return (
-      <div className="segments">
-        {children}
+      <div className="transport-menu">
+        {transport.map(segment =>
+          <TransportMenuSegment segment={segment} />
+        )}
       </div>
     );
   }
