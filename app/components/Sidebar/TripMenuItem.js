@@ -16,7 +16,7 @@ export default class TripMenuItem extends Component {
     return (
       <div>
         <MenuItem
-          className={isActive && 'active'}
+          className={router.isActive(`trips/${id}/overview`) && 'active'}
           text={name}
           label={`⌘${id}`}
           onClick={() => router.push(`/trips/${id}/overview`)}
@@ -24,6 +24,7 @@ export default class TripMenuItem extends Component {
         {isActive &&
           <Menu>
             <MenuItem
+              className={router.isActive(`trips/${id}/transport`) && 'active'}
               text="Transport"
               onClick={() => router.push(`/trips/${id}/transport`)}
             />
