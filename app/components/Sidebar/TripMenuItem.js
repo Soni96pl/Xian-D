@@ -12,7 +12,7 @@ export default class TripMenuItem extends Component {
   render() {
     const { id, name } = this.props;
     const { router } = this.context;
-    const isActive = router.isActive(`trips/${id}/overview`) || router.isActive(`trips/${id}/transport`);
+    const isActive = RegExp(`^/trips/${id}`).test(router.location.pathname);
     return (
       <div>
         <MenuItem
@@ -24,7 +24,7 @@ export default class TripMenuItem extends Component {
         {isActive &&
           <Menu>
             <MenuItem
-              className={router.isActive(`trips/${id}/transport`) && 'active'}
+              className={RegExp(`^/trips/${id}/transport`).test(router.location.pathname) && 'active'}
               text="Transport"
               onClick={() => router.push(`/trips/${id}/transport`)}
             />
