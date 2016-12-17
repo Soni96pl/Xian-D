@@ -1,3 +1,16 @@
+@import "~font-awesome/css/font-awesome.css";
+@import "variables";
+
+.fa {
+	color: $macOS-label-color;
+}
+
+a, p, span, h1, h2, h3, h4, h5, h6 {
+	.fa {
+		margin-right: 0.3em;
+	}
+}
+
 h1 {
 	margin-bottom: 0.66em;
 

@@ -157,6 +157,7 @@
     "bourbon": "^4.2.7",
     "electron-debug": "^1.0.1",
     "electron-machine-id": "^1.0.9",
+    "font-awesome": "^4.7.0",
     "leaflet": "^1.0.2",
     "npm": "^4.0.2",
     "react": "^15.4.1",
