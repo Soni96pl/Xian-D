@@ -1,4 +1,6 @@
-import { Schema } from 'normalizr';
+import { Schema, arrayOf } from 'normalizr';
+import carrierSchema from './carriers';
+import stationSchema from './stations';
 
 const segment = new Schema(
   'transport',
@@ -14,5 +16,15 @@ const segment = new Schema(
     }
   }
 );
+
+segment.define({
+  carrier: carrierSchema,
+  departure: {
+    station: stationSchema
+  },
+  arrival: {
+    station: stationSchema
+  }
+});
 
 export default segment;
