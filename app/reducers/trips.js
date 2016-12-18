@@ -3,11 +3,10 @@ import { REHYDRATE } from 'redux-persist/constants';
 import { ADD_TRIP, ADD_TRIP_TRANSPORT } from '../actions/trips';
 
 const defaultState = Immutable({
-  carriers: {},
-  cities: {},
-  stations: {},
+  trips: {},
   transport: {},
-  trips: {}
+  carriers: {},
+  stations: {}
 });
 
 export default function trips(state = defaultState, action) {
