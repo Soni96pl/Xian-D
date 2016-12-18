@@ -3,8 +3,11 @@ import { REHYDRATE } from 'redux-persist/constants';
 import { ADD_TRIP, ADD_TRIP_TRANSPORT } from '../actions/trips';
 
 const defaultState = Immutable({
-  trips: {},
-  transport: {}
+  carriers: {},
+  cities: {},
+  stations: {},
+  transport: {},
+  trips: {}
 });
 
 export default function trips(state = defaultState, action) {
@@ -20,13 +23,16 @@ export default function trips(state = defaultState, action) {
     }
     case ADD_TRIP_TRANSPORT: {
       const { transport } = action.payload.entities;
-      return state.update(
-        'transport', transportObject => transportObject.merge(transport, { deep: true })
+      return Object.keys(action.payload.entities).reduce(
+        (stateObject, entity) => (
+          entity === 'trips' ?
+            stateObject :
+            stateObject.update(entity, obj => obj.merge(action.payload.entities[entity]))
+        ),
+        state
       ).updateIn(
         ['trips', action.payload.result, 'transport'],
-        transportList => Immutable(transportList.asMutable().concat(
-          Object.keys(transport).map(key => parseInt(key, 10))
-        ))
+        transportList => Immutable(transportList.asMutable().concat(Object.keys(transport)))
       );
     }
     default:
