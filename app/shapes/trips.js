@@ -1,7 +1,7 @@
 import { PropTypes } from 'react';
 
 export const tripShape = PropTypes.shape({
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   transport: PropTypes.arrayOf(PropTypes.number).isRequired
 });

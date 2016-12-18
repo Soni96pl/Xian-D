@@ -3,7 +3,7 @@ import carrierShape from './carrier';
 import stationShape from './station';
 
 export const segmentShape = PropTypes.shape({
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   carrier: carrierShape,
   code: PropTypes.string,
   mode: PropTypes.string,
