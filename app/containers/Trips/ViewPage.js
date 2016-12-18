@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { tripsShape } from '../../shapes/trips';
+import { denormalize } from 'denormalizr';
+import reducerShape from '../../shapes/reducer';
+import tripSchema from '../../schema/trips';
 import View from '../../components/Trips/ViewPage';
 
 class ViewPage extends Component {
@@ -8,13 +10,13 @@ class ViewPage extends Component {
     params: PropTypes.shape({
       tripId: PropTypes.string
     }).isRequired,
-    trips: tripsShape.isRequired,
+    reducer: reducerShape.isRequired,
   }
 
   render() {
     const { tripId } = this.props.params;
-    const { trips } = this.props;
-    const trip = trips[parseInt(tripId, 10)];
+    const { reducer } = this.props;
+    const trip = denormalize(tripId, reducer, tripSchema);
     return <View trip={trip} />;
   }
 }
@@ -22,7 +24,7 @@ class ViewPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    trips: state.trips.trips
+    reducer: state.trips
   };
 }
 

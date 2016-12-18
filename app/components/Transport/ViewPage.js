@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { segmentShape } from '../../shapes/transport';
 
+const icons = {
+  BUS: 'fa-bus',
+  CAR: 'fa-car',
+  FERRY: 'fa-ship',
+  FLIGHT: 'fa-plane',
+  TRAIN: 'fa-train'
+};
+
 export default class ViewPage extends Component {
   static propTypes = {
     segment: segmentShape
@@ -9,7 +17,10 @@ export default class ViewPage extends Component {
   render() {
     const { segment } = this.props;
     return (
-      <span>Segment #{segment.id}</span>
+      <div>
+        <h3>{segment.carrier.name}</h3>
+        <h5><i className={`fa ${icons[segment.mode]}`} /> {segment.departure.station.name} <span className="pt-icon pt-icon-chevron-right" /> {segment.arrival.station.name}</h5>
+      </div>
     );
   }
 }

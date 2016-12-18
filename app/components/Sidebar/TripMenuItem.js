@@ -17,7 +17,6 @@ export default class TripMenuItem extends Component {
         <MenuItem
           className={router.isActive(`trips/${id}`, true) && 'active'}
           text={name}
-          label={`⌘${id}`}
           onClick={() => router.push(`/trips/${id}`)}
         />
         {router.isActive(`trips/${id}`) &&

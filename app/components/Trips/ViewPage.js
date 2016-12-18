@@ -5,7 +5,7 @@ import QuickAdd from '../../containers/Transport/QuickAdd';
 
 export default class View extends Component {
   static propTypes = {
-    trip: tripShape
+    trip: tripShape.isRequired
   }
 
   render() {

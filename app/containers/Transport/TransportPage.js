@@ -1,25 +1,25 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { tripsShape } from '../../shapes/trips';
-import { transportShape } from '../../shapes/transport';
+import { denormalize } from 'denormalizr';
+import reducerShape from '../../shapes/reducer';
+import tripSchema from '../../schema/trips';
 import Transport from '../../components/Transport/TransportPage';
 
 class TransportPage extends Component {
   static propTypes = {
     children: PropTypes.element,
     params: PropTypes.shape({
-      tripId: PropTypes.string
+      tripId: PropTypes.string.isRequired
     }).isRequired,
-    trips: tripsShape.isRequired,
-    transport: transportShape.isRequired
+    reducer: reducerShape.isRequired
   }
 
   render() {
     const { tripId } = this.props.params;
-    const { children, trips, transport } = this.props;
-    const trip = trips[parseInt(tripId, 10)];
+    const { children, reducer } = this.props;
+    const trip = denormalize(tripId, reducer, tripSchema);
     return (
-      <Transport trip={trip} transport={transport}>
+      <Transport trip={trip}>
         {children}
       </Transport>
     );
@@ -29,8 +29,7 @@ class TransportPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    trips: state.trips.trips,
-    transport: state.trips.transport
+    reducer: state.trips
   };
 }
 

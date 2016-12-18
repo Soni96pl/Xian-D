@@ -4,8 +4,8 @@ import TransportMenuSegment from './TransportMenuSegment';
 
 export default class TransportMenu extends Component {
   static propTypes = {
-    tripId: PropTypes.number,
-    transport: transportShape
+    tripId: PropTypes.string.isRequired,
+    transport: transportShape.isRequired
   }
 
   render() {

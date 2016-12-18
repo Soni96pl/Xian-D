@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import strftime from 'strftime';
 import { segmentShape } from '../../shapes/transport';
 
-export default class Segment extends Component {
+export default class TransportMenuSegment extends Component {
   static propTypes = {
-    tripId: PropTypes.number,
-    segment: segmentShape
+    tripId: PropTypes.string.isRequired,
+    segment: segmentShape.isRequired
   }
 
   static contextTypes = {
@@ -33,7 +33,7 @@ export default class Segment extends Component {
             <strong>{strftime('%d %B %H:%M', segment.departure.time)}</strong>
           </div>
           <div className="segment-places">
-            {segment.departure.station} <span className="pt-icon pt-icon-chevron-right" /> {segment.arrival.station}
+            {segment.departure.station.name} <span className="pt-icon pt-icon-chevron-right" /> {segment.arrival.station.name}
           </div>
         </div>
       </div>

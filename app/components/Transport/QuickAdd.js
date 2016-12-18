@@ -4,12 +4,13 @@ import { InputGroup, Button } from '@blueprintjs/core';
 export default class QuickAdd extends Component {
   static propTypes = {
     addTripTransport: PropTypes.func.isRequired,
-    tripId: PropTypes.number.isRequired,
+    tripId: PropTypes.string.isRequired,
     onChange: PropTypes.func
   }
 
   state = {
     mode: 'FLIGHT',
+    carrier: '',
     origin: '',
     destination: ''
   }
@@ -22,6 +23,10 @@ export default class QuickAdd extends Component {
 
   handleModeChange(event) {
     this.setState({ mode: event.target.value });
+  }
+
+  handleCarrierChange(event) {
+    this.setState({ carrier: event.target.value });
   }
 
   handleOriginChange(event) {
@@ -38,12 +43,19 @@ export default class QuickAdd extends Component {
       tripId,
       transport: {
         mode: this.state.mode,
+        carrier: {
+          name: this.state.carrier
+        },
         departure: {
-          station: this.state.origin,
+          station: {
+            name: this.state.origin
+          },
           time: null
         },
         arrival: {
-          station: this.state.destination,
+          station: {
+            name: this.state.destination
+          },
           time: null
         }
       }
@@ -70,6 +82,13 @@ export default class QuickAdd extends Component {
             </select>
           </div>
           <InputGroup
+            leftIconName="office"
+            onChange={(e) => this.handleCarrierChange(e)}
+            placeholder="Carrier"
+            value={this.state.carrier}
+            style={{ flex: '1' }}
+          />
+          <InputGroup
             leftIconName="circle"
             onChange={(e) => this.handleOriginChange(e)}
             placeholder="Origin"
@@ -83,7 +102,7 @@ export default class QuickAdd extends Component {
             value={this.state.destination}
             style={{ flex: '1' }}
           />
-          <Button type="submit" text="Add transport" onClick={() => this.handleSubmit()} />
+          <Button type="submit" text="Add" onClick={() => this.handleSubmit()} />
         </div>
       </form>
     );
