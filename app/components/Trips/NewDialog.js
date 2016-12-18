@@ -30,7 +30,7 @@ export default class NewDialog extends Component {
     event.preventDefault();
 
     const trip = addTrip({ name: this.state.tripName });
-    router.push(`/trips/${trip.payload.result}/overview`);
+    router.push(`/trips/${trip.payload.result}`);
     this.toggleDialog();
   }
 
