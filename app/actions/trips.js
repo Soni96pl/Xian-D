@@ -31,17 +31,9 @@ export function addTripTransport({ tripId, transport }) {
     type: ADD_TRIP_TRANSPORT,
     payload: {
       id: tripId,
-      transport: [{
-        id: transportId,
-        carrier: transport.carrier || null,
-        code: transport.code || null,
-        mode: transport.mode || null,
-        departure: transport.departure || null,
-        arrival: transport.arrival || null,
-        price: transport.price || null,
-        booking: transport.booking || null,
-        conditions: transport.conditions || null
-      }]
+      transport: [
+        transport
+      ]
     },
     meta: {
       schema: tripSchema
