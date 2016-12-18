@@ -6,4 +6,4 @@ export const tripShape = PropTypes.shape({
   transport: PropTypes.arrayOf(PropTypes.number).isRequired
 });
 
-export const tripsShape = PropTypes.arrayOf(tripShape.isRequired);
+export const tripsShape = PropTypes.objectOf(tripShape.isRequired);
