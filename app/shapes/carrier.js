@@ -7,6 +7,5 @@ export default PropTypes.shape({
   contact: PropTypes.shape({
     phone: PropTypes.string,
     email: PropTypes.string
-  }),
-  status: PropTypes.string
+  })
 });
