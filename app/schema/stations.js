@@ -5,7 +5,21 @@ import citySchema from './cities';
 const station = new Schema(
   'stations',
   {
-    idAttribute: defaultId
+    idAttribute: defaultId,
+    default: {
+      code: null,
+      type: null,
+      city: null,
+      location: {
+        address: null,
+        coordinates: null,
+        instructions: null
+      },
+      contact: {
+        phone: null,
+        email: null
+      }
+    }
   }
 );
 
