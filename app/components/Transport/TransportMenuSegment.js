@@ -12,12 +12,6 @@ export default class TransportMenuSegment extends Component {
     router: PropTypes.object.isRequired
   };
 
-  handleClick() {
-    const { tripId, segment } = this.props;
-    const { router } = this.context;
-    router.push(`/trips/${tripId}/transport/${segment.id}`);
-  }
-
   render() {
     const { tripId, segment } = this.props;
     const { router } = this.context;
@@ -26,7 +20,7 @@ export default class TransportMenuSegment extends Component {
     return (
       <div
         className={`transport-menu-segment ${isActive && 'active'}`}
-        onClick={() => this.handleClick()}
+        onClick={() => router.push(`/trips/${tripId}/transport/${segment.id}`)}
       >
         <div className="segment-data">
           <div className="segment-date">
