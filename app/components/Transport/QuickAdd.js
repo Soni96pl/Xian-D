@@ -44,19 +44,20 @@ export default class QuickAdd extends Component {
       transport: {
         mode: this.state.mode,
         carrier: {
-          name: this.state.carrier
+          name: this.state.carrier,
+          type: this.state.mode
         },
         departure: {
           station: {
-            name: this.state.origin
-          },
-          time: null
+            name: this.state.origin,
+            type: this.state.mode
+          }
         },
         arrival: {
           station: {
-            name: this.state.destination
-          },
-          time: null
+            name: this.state.destination,
+            type: this.state.mode
+          }
         }
       }
     });
