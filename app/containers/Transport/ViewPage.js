@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { denormalize } from 'denormalizr';
 import reducerShape from '../../shapes/reducer';
 import transportSchema from '../../schema/transport';
-import { transportShape } from '../../shapes/transport';
 import View from '../../components/Transport/ViewPage';
 
 class ViewPage extends Component {
