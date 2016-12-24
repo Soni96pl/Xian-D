@@ -1,13 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import { InputGroup, Button } from '@blueprintjs/core';
+import { Button } from '@blueprintjs/core';
 import CarrierInput from '../Carriers/CarrierInput';
+import StationInput from '../Stations/StationInput';
 import carrierShape from '../../shapes/carrier';
+import stationShape from '../../shapes/station';
 
 export default class QuickAdd extends Component {
   static propTypes = {
     addTripTransport: PropTypes.func.isRequired,
     tripId: PropTypes.string.isRequired,
     carriers: PropTypes.objectOf(carrierShape).isRequired,
+    stations: PropTypes.objectOf(stationShape).isRequired,
     onChange: PropTypes.func
   }
 
@@ -32,12 +35,12 @@ export default class QuickAdd extends Component {
     this.setState({ carrier });
   }
 
-  handleOriginChange(event) {
-    this.setState({ origin: event.target.value });
+  handleOriginChange(station) {
+    this.setState({ origin: station });
   }
 
-  handleDestinationChange(event) {
-    this.setState({ destination: event.target.value });
+  handleDestinationChange(station) {
+    this.setState({ destination: station });
   }
 
   handleSubmit() {
@@ -48,23 +51,17 @@ export default class QuickAdd extends Component {
         mode: this.state.mode,
         carrier: this.state.carrier,
         departure: {
-          station: {
-            name: this.state.origin,
-            type: this.state.mode
-          }
+          station: this.state.origin
         },
         arrival: {
-          station: {
-            name: this.state.destination,
-            type: this.state.mode
-          }
+          station: this.state.destination
         }
       }
     });
   }
 
   render() {
-    const { carriers } = this.props;
+    const { carriers, stations } = this.props;
 
     return (
       <form
@@ -90,18 +87,20 @@ export default class QuickAdd extends Component {
             onSelect={(carrier) => this.handleCarrierChange(carrier)}
             style={{ flex: '1' }}
           />
-          <InputGroup
-            leftIconName="circle"
-            onChange={(e) => this.handleOriginChange(e)}
+          <StationInput
+            stations={stations}
+            type={this.state.mode}
+            iconName="circle"
             placeholder="Origin"
-            value={this.state.origin}
+            onSelect={(station) => this.handleOriginChange(station)}
             style={{ flex: '1' }}
           />
-          <InputGroup
-            leftIconName="moon"
-            onChange={(e) => this.handleDestinationChange(e)}
+          <StationInput
+            stations={stations}
+            type={this.state.mode}
+            iconName="moon"
             placeholder="Destination"
-            value={this.state.destination}
+            onSelect={(station) => this.handleDestinationChange(station)}
             style={{ flex: '1' }}
           />
           <Button type="submit" text="Add" />

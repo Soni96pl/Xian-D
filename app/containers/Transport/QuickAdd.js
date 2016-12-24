@@ -6,7 +6,8 @@ import * as TripsActions from '../../actions/trips';
 
 function mapStateToProps(state) {
   return {
-    carriers: state.trips.carriers
+    carriers: state.trips.carriers,
+    stations: state.trips.stations
   };
 }
 
