@@ -151,13 +151,16 @@
     "webpack-validator": "^2.2.9"
   },
   "dependencies": {
-    "@blueprintjs/core": "^1.1.0",
+    "@blueprintjs/core": "^1.4.0",
     "@blueprintjs/datetime": "^1.2.0",
     "barn": "^0.2.1",
+    "blueprint-fuzzy-select": "^1.0.6",
     "bourbon": "^4.2.7",
+    "denormalizr": "^0.4.1",
     "electron-debug": "^1.0.1",
     "electron-machine-id": "^1.0.9",
     "font-awesome": "^4.7.0",
+    "fuzzy-search": "^1.4.0",
     "leaflet": "^1.0.2",
     "npm": "^4.0.2",
     "react": "^15.4.1",
@@ -175,7 +178,8 @@
     "redux-thunk": "^2.1.0",
     "seamless-immutable": "^6.3.0",
     "source-map-support": "^0.4.6",
-    "strftime": "^0.9.2"
+    "strftime": "^0.9.2",
+    "uuid": "^3.0.1"
   },
   "devEngines": {
     "node": ">=6.x",

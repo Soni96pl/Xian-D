@@ -1,10 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { InputGroup, Button } from '@blueprintjs/core';
+import CarrierInput from '../Carriers/CarrierInput';
+import carrierShape from '../../shapes/carrier';
 
 export default class QuickAdd extends Component {
   static propTypes = {
     addTripTransport: PropTypes.func.isRequired,
     tripId: PropTypes.string.isRequired,
+    carriers: PropTypes.objectOf(carrierShape).isRequired,
     onChange: PropTypes.func
   }
 
@@ -25,8 +28,8 @@ export default class QuickAdd extends Component {
     this.setState({ mode: event.target.value });
   }
 
-  handleCarrierChange(event) {
-    this.setState({ carrier: event.target.value });
+  handleCarrierChange(carrier) {
+    this.setState({ carrier });
   }
 
   handleOriginChange(event) {
@@ -43,10 +46,7 @@ export default class QuickAdd extends Component {
       tripId,
       transport: {
         mode: this.state.mode,
-        carrier: {
-          name: this.state.carrier,
-          type: this.state.mode
-        },
+        carrier: this.state.carrier,
         departure: {
           station: {
             name: this.state.origin,
@@ -64,6 +64,8 @@ export default class QuickAdd extends Component {
   }
 
   render() {
+    const { carriers } = this.props;
+
     return (
       <form
         className="transport-quickadd"
@@ -82,11 +84,10 @@ export default class QuickAdd extends Component {
               <option value="TRAIN">Train</option>
             </select>
           </div>
-          <InputGroup
-            leftIconName="office"
-            onChange={(e) => this.handleCarrierChange(e)}
-            placeholder="Carrier"
-            value={this.state.carrier}
+          <CarrierInput
+            carriers={carriers}
+            type={this.state.mode}
+            onSelect={(carrier) => this.handleCarrierChange(carrier)}
             style={{ flex: '1' }}
           />
           <InputGroup
@@ -103,7 +104,7 @@ export default class QuickAdd extends Component {
             value={this.state.destination}
             style={{ flex: '1' }}
           />
-          <Button type="submit" text="Add" onClick={() => this.handleSubmit()} />
+          <Button type="submit" text="Add" />
         </div>
       </form>
     );
