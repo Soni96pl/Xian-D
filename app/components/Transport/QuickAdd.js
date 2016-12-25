@@ -14,6 +14,10 @@ export default class QuickAdd extends Component {
     onChange: PropTypes.func
   }
 
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  }
+
   state = {
     mode: 'FLIGHT',
     carrier: '',
@@ -45,7 +49,8 @@ export default class QuickAdd extends Component {
 
   handleSubmit() {
     const { tripId, addTripTransport } = this.props;
-    addTripTransport({
+    const { router } = this.context;
+    const action = addTripTransport({
       tripId,
       transport: {
         mode: this.state.mode,
@@ -58,6 +63,8 @@ export default class QuickAdd extends Component {
         }
       }
     });
+    const transportId = Object.keys(action.payload.entities.transport)[0];
+    router.push(`trips/${tripId}/transport/${transportId}`);
   }
 
   render() {
