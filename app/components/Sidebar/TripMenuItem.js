@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { Menu, MenuItem } from '@blueprintjs/core';
-import { tripShape } from '../../shapes/trips';
 
 export default class TripMenuItem extends Component {
-  static propTypes = tripShape;
+  static propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string
+  };
 
   static contextTypes = {
     router: PropTypes.object.isRequired

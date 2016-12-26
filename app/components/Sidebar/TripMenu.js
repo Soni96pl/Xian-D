@@ -6,7 +6,7 @@ import { normalizedTripShape } from '../../shapes/trips';
 
 export default class TripMenu extends Component {
   static propTypes = {
-    trips: normalizedTripShape.isRequired
+    trips: PropTypes.objectOf(normalizedTripShape).isRequired
   };
 
   static contextTypes = {
