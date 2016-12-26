@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
 import TripMenuItem from './TripMenuItem';
 import TripsNewDialog from '../../containers/Trips/NewDialog';
-import { tripsShape } from '../../shapes/trips';
+import { normalizedTripShape } from '../../shapes/trips';
 
 export default class TripMenu extends Component {
   static propTypes = {
-    trips: tripsShape.isRequired
+    trips: normalizedTripShape.isRequired
   };
 
   static contextTypes = {

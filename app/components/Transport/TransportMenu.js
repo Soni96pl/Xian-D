@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import { transportShape } from '../../shapes/transport';
+import { segmentShape } from '../../shapes/transport';
 import TransportMenuSegment from './TransportMenuSegment';
 
 export default class TransportMenu extends Component {
   static propTypes = {
     tripId: PropTypes.string.isRequired,
-    transport: transportShape.isRequired
+    transport: PropTypes.arrayOf(segmentShape).isRequired
   }
 
   render() {

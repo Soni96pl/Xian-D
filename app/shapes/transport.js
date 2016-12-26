@@ -24,6 +24,6 @@ export const segmentShape = PropTypes.shape({
     url: PropTypes.string
   }),
   conditions: PropTypes.string
-}).isRequired;
+});
 
-export const transportShape = PropTypes.objectOf(segmentShape);
+export const transportShape = PropTypes.objectOf(segmentShape.isRequired);
