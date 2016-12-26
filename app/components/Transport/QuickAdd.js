@@ -47,7 +47,7 @@ export default class QuickAdd extends Component {
     this.setState({ destination: station });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
     const { tripId, addTripTransport } = this.props;
     const { router } = this.context;
     const action = addTripTransport({
@@ -65,6 +65,7 @@ export default class QuickAdd extends Component {
     });
     const transportId = Object.keys(action.payload.entities.transport)[0];
     router.push(`/trips/${tripId}/transport/${transportId}`);
+    event.preventDefault();
   }
 
   render() {
@@ -73,7 +74,7 @@ export default class QuickAdd extends Component {
     return (
       <form
         className="transport-quickadd"
-        onSubmit={() => this.handleSubmit()}
+        onSubmit={(e) => this.handleSubmit(e)}
       >
         <div className="pt-control-group">
           <div className="pt-select">
