@@ -49,6 +49,7 @@ export default class StationInput extends Component {
         field="name"
         sort
         selectOnBlur="Tab"
+        selectOnEnter
         onSelect={(carrier) => this.chooseStation(carrier)}
         onAdd={(name) => this.addStation(name)}
       >

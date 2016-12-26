@@ -45,6 +45,7 @@ export default class CarrierInput extends Component {
         field="name"
         sort
         selectOnBlur="Tab"
+        selectOnEnter
         onSelect={(carrier) => this.chooseCarrier(carrier)}
         onAdd={(name) => this.addCarrier(name)}
       >
