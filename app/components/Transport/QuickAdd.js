@@ -64,7 +64,7 @@ export default class QuickAdd extends Component {
       }
     });
     const transportId = Object.keys(action.payload.entities.transport)[0];
-    router.push(`trips/${tripId}/transport/${transportId}`);
+    router.push(`/trips/${tripId}/transport/${transportId}`);
   }
 
   render() {
