@@ -8,8 +8,8 @@ export function addTrip({ name }) {
   return {
     type: ADD_TRIP,
     payload: {
-      transport: [],
-      name
+      name,
+      transport: []
     },
     meta: {
       schema: tripSchema
