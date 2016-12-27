@@ -1,8 +1,8 @@
 .status {
   padding: 5px 10px;
-  border-bottom: solid 1px $macOS-border-color;
+  border-bottom: solid 1px $border-color;
 
-  background-color: $macOS-status-color;
+  background-color: $status-color;
 }
 
 main > .status {

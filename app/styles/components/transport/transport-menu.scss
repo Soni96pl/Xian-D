@@ -1,24 +1,24 @@
 .transport-menu {
   position: absolute;
-  top: 27px;
+  top: $md-margin;
   bottom: 0;
-  left: 200px;
+  left: $sidebar-width + $md-margin;
 
-  width: 230px;
+  width: $transport-menu-width;
 
   overflow: scroll;
 
-  border-right: solid 1px $macOS-sidebar-color;
+  border-right: solid 1px $border-color;
 
   &> .transport-menu-segment {
     margin: 0;
-    padding: 5px;
+    padding: $sm-margin;
     border-radius: 0;
 
     box-shadow: initial;
 
     &> .segment-data {
-      padding: 10px;
+      padding: $lg-margin;
       border-radius: 2px;
 
       &> .segment-date {
@@ -26,17 +26,22 @@
       }
     }
 
-    &:hover > .segment-data {
-      background-color: #137CBD;
-      color: #FFFFFF;
+    &:hover:not(.active), &:hover:not(:focus) {
+      &> .segment-data {
+        background-color: $sidebar-hover-background-color;
+        color: $sidebar-hover-text-color;
 
-      .pt-icon {
-        color: inherit;
+        .pt-icon {
+          color: inherit;
+        }
       }
     }
 
-    &.active:not(:hover) > .segment-data {
-      background-color: $macOS-sidebar-color;
+    &.active, &:focus {
+      &> .segment-data {
+        background-color: $sidebar-active-background-color;
+        color: $sidebar-active-text-color;
+      }
     }
   }
 }

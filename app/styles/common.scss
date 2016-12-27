@@ -3,10 +3,11 @@
 body {
   margin: 0;
 
-  background-color: $macOS-background-color;
+  background-color: $background-color;
+  color: $text-color;
 
   font-size: 13px;
-  padding-left: 200px;
+  padding-left: $sidebar-width + $md-margin;
 
   main {
     padding: 15px;
@@ -21,7 +22,7 @@ body {
     line-height: 1em;
   }
 
-  h1, h2, h3, h4, h5 {
+  h3, h4, h5 {
     font-weight: 300;
   }
 

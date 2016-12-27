@@ -5,10 +5,29 @@ $macOS-gray4: #E5E5E5;
 $macOS-gray5: #F6F6F6;
 $macOS-gray6: #FFFFFF;
 
-$macOS-border-color: $macOS-gray3;
-$macOS-menu-header-color: $macOS-gray1;
-$macOS-sidebar-color: $macOS-gray5;
-$macOS-sidebar-active-color: $macOS-gray4;
-$macOS-label-color: $macOS-gray2;
-$macOS-status-color: $macOS-gray5;
-$macOS-background-color: $macOS-gray6;
+$dark-gray-1: #252830;
+$dark-gray-2: #51586A;
+
+$blue-light-1: #289EE8;
+
+$sm-margin: 5px;
+$md-margin: 10px;
+$lg-margin: 15px;
+
+$background-color: $dark-gray-1;
+$border-color: $dark-gray-1;
+$text-color: $macOS-gray4;
+
+$sidebar-width: 200px;
+$sidebar-background-color: $dark-gray-1;
+$sidebar-text-color: $macOS-gray3;
+$sidebar-header-text-color: $dark-gray-2;
+$sidebar-active-background-color: $blue-light-1;
+$sidebar-active-text-color: $dark-gray-1;
+$sidebar-hover-background-color: transparent;
+$sidebar-hover-text-color: $sidebar-text-color;
+
+$transport-menu-width: 200px;
+
+$label-color: $dark-gray-2;
+$status-color: $dark-gray-1;

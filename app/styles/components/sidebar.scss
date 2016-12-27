@@ -3,12 +3,43 @@
   top: 0;
   left: 0;
 
-  border-right: solid 1px $macOS-border-color;
+  border-right: solid 1px $border-color;
 
-  width: 200px;
+  width: $sidebar-width;
   height: 100vh;
 
-  background-color: $macOS-sidebar-color;
+  background-color: $sidebar-background-color;
+  color: $sidebar-text-color;
+
+  .pt-menu-header {
+    &> h6 {
+      color: $sidebar-header-text-color;
+
+      font-size: 12px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+
+  li {
+    &> .pt-menu-item {
+      color: $sidebar-text-color;
+
+      &.active, &:focus {
+        background-color: $sidebar-active-background-color;
+        color: $sidebar-active-text-color;
+
+        &::before, .pt-menu-item-label {
+          color: $label-color;
+        }
+      }
+
+      &:hover:not(.active):not(:focus) {
+        background-color: $sidebar-hover-background-color;
+        color: $sidebar-hover-text-color;
+      }
+    }
+  }
 }
 
 .sidebar-bottom {

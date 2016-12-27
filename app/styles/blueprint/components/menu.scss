@@ -5,29 +5,10 @@
 
   background-color: transparent;
 
-  .pt-menu-header {
-    &> h6 {
-      color: $macOS-menu-header-color;
-
-      font-size: 12px;
-      font-weight: 300;
-      text-transform: uppercase;
-    }
-  }
-
   li {
     &> .pt-menu-item {
       &:hover {
         cursor: default;
-      }
-
-      &.active:not(:hover), &:focus:not(:hover) {
-        background-color: $macOS-sidebar-active-color;
-        color: inherit;
-
-        &::before, .pt-menu-item-label {
-          color: $macOS-label-color;
-        }
       }
     }
   }
