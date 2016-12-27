@@ -1,10 +1,10 @@
 .status {
-	padding: 5px 10px;
-	border-bottom: solid 1px $macOS-border-color;
+  padding: 5px 10px;
+  border-bottom: solid 1px $macOS-border-color;
 
-	background-color: $macOS-status-color;
+  background-color: $macOS-status-color;
 }
 
 main > .status {
-	margin: -15px -15px 15px -15px;
+  margin: -15px -15px 15px -15px;
 }

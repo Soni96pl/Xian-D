@@ -2,23 +2,23 @@
 @import "variables";
 
 .fa {
-	color: $macOS-label-color;
+  color: $macOS-label-color;
 }
 
 a, p, span, h1, h2, h3, h4, h5, h6 {
-	.fa {
-		margin-right: 0.3em;
-	}
+  .fa {
+    margin-right: 0.3em;
+  }
 }
 
 h1 {
-	margin-bottom: 0.66em;
+  margin-bottom: 0.66em;
 
-	font-size: 3em;
-	font-weight: 500;
+  font-size: 3em;
+  font-weight: 500;
 }
 
 h2 {
-	font-size: 2em;
-	font-weight: 300;
+  font-size: 2em;
+  font-weight: 300;
 }

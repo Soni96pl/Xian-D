@@ -2,7 +2,7 @@
 @import "~@blueprintjs/core/src/common/variables";
 
 .pt-dialog {
-	$dialog-transition-props: (
+  $dialog-transition-props: (
     transform: (translate(50%, -100%) scale(1), translate(50%, 0%) scale(1))
   );
   @include react-transition(
@@ -13,22 +13,22 @@
     $before: "&"
   );
 
-	top: 0;
+  top: 0;
 
-	width: initial;
-	min-width: 400px;
-	max-width: 500px;
+  width: initial;
+  min-width: 400px;
+  max-width: 500px;
 
-	padding-bottom: 1em;
+  padding-bottom: 1em;
 
-	border-radius: 0 0 6px 6px;
-	background-color: #EFEFEF;
+  border-radius: 0 0 6px 6px;
+  background-color: #EFEFEF;
 
-	.pt-dialog-body {
-		margin: 1em;
-	}
+  .pt-dialog-body {
+    margin: 1em;
+  }
 
-	.pt-dialog-footer {
-		margin: 0 1em;
-	}
+  .pt-dialog-footer {
+    margin: 0 1em;
+  }
 }

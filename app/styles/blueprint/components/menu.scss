@@ -1,34 +1,34 @@
 @import "../../variables.scss";
 
 .pt-menu {
-	border-radius: 0px;
+  border-radius: 0px;
 
-	background-color: transparent;
+  background-color: transparent;
 
-	.pt-menu-header {
-		&> h6 {
-			color: $macOS-menu-header-color;
+  .pt-menu-header {
+    &> h6 {
+      color: $macOS-menu-header-color;
 
-			font-size: 12px;
-			font-weight: 300;
-			text-transform: uppercase;
-		}
-	}
+      font-size: 12px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
 
-	li {
-		&> .pt-menu-item {
-			&:hover {
-				cursor: default;
-			}
+  li {
+    &> .pt-menu-item {
+      &:hover {
+        cursor: default;
+      }
 
-			&.active:not(:hover), &:focus:not(:hover) {
-				background-color: $macOS-sidebar-active-color;
-				color: inherit;
+      &.active:not(:hover), &:focus:not(:hover) {
+        background-color: $macOS-sidebar-active-color;
+        color: inherit;
 
-				&::before, .pt-menu-item-label {
-					color: $macOS-label-color;
-				}
-			}
-		}
-	}
+        &::before, .pt-menu-item-label {
+          color: $macOS-label-color;
+        }
+      }
+    }
+  }
 }

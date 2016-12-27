@@ -1,25 +1,25 @@
 .segment-small {
-	display: flex;
-	flex-flow: row;
-	align-items: center;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 
-	margin: 1em 0;
+  margin: 1em 0;
 
-	&> div {
-		padding: 0 1em;
-	}
+  &> div {
+    padding: 0 1em;
+  }
 
-	&> .segment-date {
-		width: 30%;
-	}
-	&> .segment-places {
-		width: 40%;
-	}
-	&> .segment-mode {
-		width: 15%;
-	}
-	&> .segment-controls {
-		width: 15%;
-		text-align: right;
-	}
+  &> .segment-date {
+    width: 30%;
+  }
+  &> .segment-places {
+    width: 40%;
+  }
+  &> .segment-mode {
+    width: 15%;
+  }
+  &> .segment-controls {
+    width: 15%;
+    text-align: right;
+  }
 }

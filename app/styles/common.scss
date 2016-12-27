@@ -1,35 +1,35 @@
 @import "variables";
 
 body {
-	margin: 0;
+  margin: 0;
 
-	background-color: $macOS-background-color;
+  background-color: $macOS-background-color;
 
-	font-size: 13px;
-	padding-left: 200px;
+  font-size: 13px;
+  padding-left: 200px;
 
-	main {
-		padding: 15px;
-	}
+  main {
+    padding: 15px;
+  }
 
-	strong {
-		font-weight: 500;
-	}
+  strong {
+    font-weight: 500;
+  }
 
-	h1, h2, h3, h4, h5, h6 {
-		margin-bottom: 10px;
-		line-height: 1em;
-	}
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+    line-height: 1em;
+  }
 
-	h1, h2, h3, h4, h5 {
-		font-weight: 300;
-	}
+  h1, h2, h3, h4, h5 {
+    font-weight: 300;
+  }
 
-	h6 {
-		font-weight: 500;
-	}
+  h6 {
+    font-weight: 500;
+  }
 
-	a:hover, button:hover {
-		cursor: default;
-	}
+  a:hover, button:hover {
+    cursor: default;
+  }
 }
