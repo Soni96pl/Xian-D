@@ -18,7 +18,7 @@ export default class ViewPage extends Component {
     const { segment } = this.props;
     return (
       <div>
-        <h3>{segment.carrier.name}</h3>
+        <h2>{segment.carrier.name}</h2>
         <h5><i className={`fa ${icons[segment.mode]}`} /> {segment.departure.station.name} <span className="pt-icon pt-icon-chevron-right" /> {segment.arrival.station.name}</h5>
       </div>
     );
