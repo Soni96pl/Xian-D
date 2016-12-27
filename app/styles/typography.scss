@@ -1,13 +1,15 @@
 @import "~font-awesome/css/font-awesome.css";
 @import "variables";
 
-.fa {
+.fa, .pt-icon {
   color: $label-color;
 }
 
 a, p, span, h1, h2, h3, h4, h5, h6 {
-  .fa {
-    margin-right: 0.3em;
+  :first-child {
+    &.fa, &.pt-icon {
+      margin-right: 0.3em;
+    }
   }
 }
 

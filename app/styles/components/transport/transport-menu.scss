@@ -26,21 +26,36 @@
       }
     }
 
-    &:hover:not(.active), &:hover:not(:focus) {
+    &.active {
       &> .segment-data {
-        background-color: $sidebar-hover-background-color;
-        color: $sidebar-hover-text-color;
+        background-color: $sidebar-active-background-color;
+        color: $sidebar-active-text-color;
 
-        .pt-icon {
-          color: inherit;
+        .fa, .pt-icon {
+          color: $label-color;
         }
       }
     }
 
-    &.active, &:focus {
+    &:focus:not(.active) {
       &> .segment-data {
-        background-color: $sidebar-active-background-color;
-        color: $sidebar-active-text-color;
+        background-color: $sidebar-focus-background-color;
+        color: $sidebar-focus-text-color;
+
+        .fa, .pt-icon {
+          color: $label-color;
+        }
+      }
+    }
+
+    &:hover:not(.active):not(:focus) {
+      &> .segment-data {
+        background-color: $sidebar-hover-background-color;
+        color: $sidebar-hover-text-color;
+
+        .fa, .pt-icon {
+          color: $label-color;
+        }
       }
     }
   }

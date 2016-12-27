@@ -17,16 +17,30 @@ body {
     font-weight: 500;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 10px;
+  h1, h2 {
+    margin-bottom: $lg-margin;
     line-height: 1em;
+
+    color: $lg-header-text-color;
+
+    font-weight: 500;
   }
 
   h3, h4, h5 {
+    margin-bottom: $md-margin;
+    line-height: 1em;
+
+    color: $md-header-text-color;
+
     font-weight: 300;
   }
 
   h6 {
+    margin-bottom: $md-margin;
+    line-height: 1em;
+
+    color: $sm-header-text-color;
+
     font-weight: 500;
   }
 
