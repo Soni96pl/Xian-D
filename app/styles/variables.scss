@@ -1,12 +1,14 @@
 $macOS-gray1: #818181;
 $macOS-gray2: #5C7080;
 $macOS-gray3: #C7C7C7;
-$macOS-gray4: #E5E5E5;
-$macOS-gray5: #F6F6F6;
-$macOS-gray6: #FFFFFF;
+$macOS-gray4: #DDDDDD;
+$macOS-gray5: #E5E5E5;
+$macOS-gray6: #F6F6F6;
+$macOS-gray7: #FFFFFF;
 
-$dark-gray1: #252830;
-$dark-gray2: #51586A;
+$dark-gray1: #171717;
+$dark-gray2: #252830;
+$dark-gray3: #51586A;
 
 $blue-light1: #289EE8;
 
@@ -14,26 +16,34 @@ $sm-margin: 5px;
 $md-margin: 10px;
 $lg-margin: 15px;
 
-$background-color: $dark-gray1;
-$border-color: $dark-gray1;
-$text-color: $macOS-gray4;
+$background-color: $macOS-gray5;
+$border-color: $macOS-gray4;
+$text-color: $dark-gray2;
 
-$lg-header-text-color: $macOS-gray5;
+$lg-header-text-color: $dark-gray1;
 $md-header-text-color: $text-color;
-$sm-header-text-color: $dark-gray2;
+$sm-header-text-color: $dark-gray3;
 
 $sidebar-width: 200px;
-$sidebar-background-color: $dark-gray1;
-$sidebar-text-color: $macOS-gray4;
+$sidebar-background-color: $dark-gray2;
+$sidebar-text-color: $macOS-gray5;
 $sidebar-header-text-color: $sm-header-text-color;
 $sidebar-active-background-color: $blue-light1;
-$sidebar-active-text-color: $dark-gray1;
+$sidebar-active-text-color: $dark-gray2;
 $sidebar-focus-background-color: transparent;
 $sidebar-focus-text-color: $sidebar-text-color;
 $sidebar-hover-background-color: transparent;
 $sidebar-hover-text-color: $sidebar-text-color;
 
 $transport-menu-width: 200px;
+$transport-menu-background-color: $macOS-gray4;
+$transport-menu-text-color: $dark-gray2;
+$transport-menu-active-background-color: $blue-light1;
+$transport-menu-active-text-color: $dark-gray2;
+$transport-menu-focus-background-color: transparent;
+$transport-menu-focus-text-color: $transport-menu-text-color;
+$transport-menu-hover-background-color: transparent;
+$transport-menu-hover-text-color: $transport-menu-text-color;
 
-$label-color: $dark-gray2;
-$status-color: $dark-gray1;
+$label-color: $dark-gray3;
+$status-color: $dark-gray2;
