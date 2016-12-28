@@ -6,16 +6,7 @@ import stationSchema from './stations';
 const segment = new Schema(
   'transport',
   {
-    idAttribute: defaultId,
-    defaults: {
-      carrier: null,
-      code: null,
-      departure: null,
-      arrival: null,
-      price: null,
-      booking: null,
-      conditions: null
-    }
+    idAttribute: defaultId
   }
 );
 
