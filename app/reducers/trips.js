@@ -1,6 +1,7 @@
 import Immutable from 'seamless-immutable';
 import { REHYDRATE } from 'redux-persist/constants';
 import { ADD_TRIP, ADD_TRIP_TRANSPORT } from '../actions/trips';
+import { UPDATE_SEGMENT } from '../actions/transport';
 
 const defaultState = Immutable({
   trips: {},
@@ -33,6 +34,9 @@ export default function trips(state = defaultState, action) {
         ['trips', action.payload.result, 'transport'],
         transportList => Immutable(transportList.asMutable().concat(Object.keys(transport)))
       );
+    }
+    case UPDATE_SEGMENT: {
+      return state.merge(action.payload.entities, { deep: true });
     }
     default:
       return state;
