@@ -7,13 +7,13 @@ export const segmentShape = PropTypes.shape({
   carrier: carrierShape,
   code: PropTypes.string,
   mode: PropTypes.string,
+  date: PropTypes.string,
+  duration: PropTypes.number,
   departure: PropTypes.shape({
     station: stationShape,
-    time: PropTypes.instanceOf(Date)
   }),
   arrival: PropTypes.shape({
     station: stationShape,
-    time: PropTypes.instanceOf(Date),
   }),
   price: PropTypes.shape({
     value: PropTypes.number,
