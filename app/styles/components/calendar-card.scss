@@ -1,0 +1,21 @@
+.calendar-card {
+  width: 80px;
+
+  border-radius: 4px;
+  padding: 0;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  .calendar-card-month {
+    padding: 10px;
+    h5 {
+      margin-bottom: 0;
+    }
+  }
+
+  .calendar-card-day {
+    padding: 5px;
+  }
+}
