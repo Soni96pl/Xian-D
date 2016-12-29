@@ -1,0 +1,23 @@
+.basic-info {
+  display: flex;
+
+  max-width: 400px;
+
+  align-items: center;
+
+  .origin {
+    flex: 1;
+
+    padding-left: 15px;
+
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+
+  .destination {
+    flex: 1;
+
+    text-align: right;
+  }
+}
