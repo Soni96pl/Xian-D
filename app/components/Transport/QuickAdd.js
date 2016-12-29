@@ -52,6 +52,8 @@ export default class QuickAdd extends Component {
     const { router } = this.context;
 
     const date = new Date();
+    date.setHours(12);
+    date.setMinutes(0);
 
     const action = addTripTransport({
       tripId,
@@ -59,6 +61,7 @@ export default class QuickAdd extends Component {
         mode: this.state.mode,
         carrier: this.state.carrier,
         date: date.toString(),
+        duration: 0,
         departure: {
           station: this.state.origin
         },
