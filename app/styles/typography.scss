@@ -34,11 +34,20 @@ h1, h2 {
   font-weight: 500;
 }
 
-h3, h4, h5, h6 {
+h3, h4, h5 {
   margin-bottom: $md-margin;
-  line-height: 1em;
 
   color: $md-header-text-color;
+}
+
+h3, h4, h5, h6 {
+  line-height: 1em;
 
   font-weight: 300;
+}
+
+h6 {
+  margin-bottom: $sm-margin;
+
+  color: $sm-header-text-color;
 }
