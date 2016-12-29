@@ -7,7 +7,8 @@ export default class CarrierInput extends Component {
   static propTypes = {
     carriers: PropTypes.objectOf(carrierShape).isRequired,
     type: PropTypes.string,
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
+    style: PropTypes.objectOf(PropTypes.string)
   }
 
   state = {
@@ -34,8 +35,8 @@ export default class CarrierInput extends Component {
   }
 
   render() {
+    const { type, style } = this.props;
     let { carriers } = this.props;
-    const { type } = this.props;
 
     carriers = Object.values(carriers).filter((carrier) => carrier.type === type);
 
@@ -48,6 +49,7 @@ export default class CarrierInput extends Component {
         selectOnEnter
         onSelect={(carrier) => this.chooseCarrier(carrier)}
         onAdd={(name) => this.addCarrier(name)}
+        style={style}
       >
         <InputGroup
           leftIconName="office"

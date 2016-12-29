@@ -9,7 +9,8 @@ export default class StationInput extends Component {
     type: PropTypes.string,
     placeholder: PropTypes.string,
     iconName: PropTypes.string,
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
+    style: PropTypes.string
   }
 
   state = {
@@ -36,8 +37,8 @@ export default class StationInput extends Component {
   }
 
   render() {
+    const { type, style } = this.props;
     let { stations, placeholder, iconName } = this.props;
-    const { type } = this.props;
 
     stations = Object.values(stations).filter((station) => station.type === type);
     placeholder = placeholder || 'Station';
@@ -52,6 +53,7 @@ export default class StationInput extends Component {
         selectOnEnter
         onSelect={(carrier) => this.chooseStation(carrier)}
         onAdd={(name) => this.addStation(name)}
+        style={style}
       >
         <InputGroup
           leftIconName={iconName}
