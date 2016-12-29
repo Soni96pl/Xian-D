@@ -15,7 +15,7 @@ export default class CalendarCard extends Component {
           <h5>{strftime('%-d %b', date)}</h5>
         </div>
         <div className="calendar-card-day">
-          {strftime('%a', date)}
+          {strftime('%A', date)}
         </div>
       </div>
     );
