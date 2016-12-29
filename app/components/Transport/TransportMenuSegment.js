@@ -24,7 +24,7 @@ export default class TransportMenuSegment extends Component {
       >
         <div className="segment-data">
           <div className="segment-date">
-            <strong>{strftime('%-d %B %Y', segment.date)}</strong>
+            <strong>{strftime('%-d %B %Y', new Date(segment.date))}</strong>
           </div>
           <div className="segment-places">
             {segment.departure.station.name} <span className="pt-icon pt-icon-chevron-right" /> {segment.arrival.station.name}

@@ -34,7 +34,7 @@ export default class ViewPage extends Component {
     const { updateSegment, segment } = this.props;
     updateSegment({
       id: segment.id,
-      date
+      date: date.toString()
     });
   }
 
@@ -48,7 +48,7 @@ export default class ViewPage extends Component {
         <h2>{segment.carrier.name}</h2>
         <h5><i className={`fa ${icons[segment.mode]}`} /> {segment.departure.station.name} <span className="pt-icon pt-icon-chevron-right" /> {segment.arrival.station.name}</h5>
         <DateInput
-          value={segment.date}
+          value={new Date(segment.date)}
           minDate={minDate}
           maxDate={maxDate}
           onChange={(date) => this.handleDepartureChange(date)}
