@@ -50,11 +50,15 @@ export default class QuickAdd extends Component {
   handleSubmit(event) {
     const { tripId, addTripTransport } = this.props;
     const { router } = this.context;
+
+    const date = new Date();
+
     const action = addTripTransport({
       tripId,
       transport: {
         mode: this.state.mode,
         carrier: this.state.carrier,
+        date: date.toString(),
         departure: {
           station: this.state.origin
         },
