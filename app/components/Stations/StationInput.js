@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { InputGroup } from '@blueprintjs/core';
 import FuzzySelect from 'blueprint-fuzzy-select';
-import carrierShape from '../../shapes/carrier';
+import stationShape from '../../shapes/station';
 
 export default class StationInput extends Component {
   static propTypes = {
-    stations: PropTypes.objectOf(carrierShape).isRequired,
+    stations: PropTypes.objectOf(stationShape).isRequired,
     type: PropTypes.string,
     placeholder: PropTypes.string,
     iconName: PropTypes.string,
