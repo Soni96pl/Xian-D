@@ -9,6 +9,62 @@
   height: 100vh;
 
   background-color: $sidebar-background-color;
+
+  .pt-menu {
+    background-color: $sidebar-background-color;
+    color: $sidebar-text-color;
+
+    .pt-menu-header {
+      &> h6 {
+        color: $sidebar-header-text-color;
+
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+
+    li {
+      &> .pt-menu-item {
+        color: $sidebar-text-color;
+
+        &::before, .pt-menu-item-label {
+          color: $label-color;
+        }
+
+        &.active {
+          background-color: $sidebar-active-background-color;
+          color: $sidebar-active-text-color;
+
+          &::before, .pt-menu-item-label {
+            color: $label-color;
+          }
+        }
+
+        &:focus:not(.active) {
+          background-color: $sidebar-focus-background-color;
+          color: $sidebar-focus-text-color;
+
+          &::before, .pt-menu-item-label {
+            color: $label-color;
+          }
+        }
+
+        &:hover:not(.active):not(:focus) {
+          background-color: $sidebar-hover-background-color;
+          color: $sidebar-hover-text-color;
+
+          &::before, .pt-menu-item-label {
+            color: $label-color;
+          }
+        }
+
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
 }
 
 .sidebar-bottom {
