@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from '@blueprintjs/core';
 import strftime from 'strftime';
 import CalendarCard from '../CalendarCard';
 import { segmentShape } from '../../shapes/transport';
@@ -35,6 +36,9 @@ export default class BasicInfo extends Component {
         <div className="destination">
           <h5>{segment.arrival.station.name}</h5>
           <h6>{strftime('%H:%M', arrivalDate)}</h6>
+        </div>
+        <div className="edit">
+          <Button iconName="edit" text="Edit" />
         </div>
       </div>
     );
