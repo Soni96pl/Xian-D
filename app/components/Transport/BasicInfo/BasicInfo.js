@@ -1,46 +1,33 @@
 import React, { Component } from 'react';
-import { Button } from '@blueprintjs/core';
-import strftime from 'strftime';
-import CalendarCard from '../CalendarCard';
-import { segmentShape } from '../../shapes/transport';
-
-const icons = {
-  BUS: 'fa-bus',
-  CAR: 'fa-car',
-  FERRY: 'fa-ship',
-  FLIGHT: 'fa-plane',
-  TRAIN: 'fa-train'
-};
+import { If, Then, Else } from 'react-if';
+import ShowBasicInfo from './ShowBasicInfo';
+import { segmentShape } from '../../../shapes/transport';
 
 export default class BasicInfo extends Component {
   static propTypes = {
     segment: segmentShape
   };
 
+  state = {
+    edit: false
+  }
+
   render() {
     const { segment } = this.props;
-    const departureDate = new Date(segment.date);
-    const arrivalDate = new Date(departureDate);
-    arrivalDate.setMinutes(arrivalDate.getMinutes() + segment.duration);
+    const { edit } = this.state;
 
     return (
-      <div className="basic-info">
-        <CalendarCard date={departureDate} />
-        <div className="origin">
-          <h5>{segment.departure.station.name}</h5>
-          <h6>{strftime('%H:%M', departureDate)}</h6>
-        </div>
-        <div className="icon">
-          <i className={`fa fa-2x ${icons[segment.mode]}`} />
-        </div>
-        <div className="destination">
-          <h5>{segment.arrival.station.name}</h5>
-          <h6>{strftime('%H:%M', arrivalDate)}</h6>
-        </div>
-        <div className="edit">
-          <Button iconName="edit" text="Edit" />
-        </div>
-      </div>
+      <If condition={edit === false}>
+        <Then>
+          <ShowBasicInfo
+            segment={segment}
+            onEdit={() => this.setState({ edit: !edit })}
+          />
+        </Then>
+        <Else>
+          // Implement EditBasicInfo
+        </Else>
+      </If>
     );
   }
 }

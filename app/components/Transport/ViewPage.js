@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import BasicInfo from './BasicInfo';
+import BasicInfo from './BasicInfo/BasicInfo';
 import { segmentShape } from '../../shapes/transport';
 
 export default class ViewPage extends Component {
